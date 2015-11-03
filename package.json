@@ -5,8 +5,7 @@
   "main": "main.js",
   "scripts": {
     "test": "npm test",
-    "webpack": "webpack",
-    "webpackProd": "webpack -p"
+    "webpack": "webpack && webpack -c webpack.config.min.js"
   },
   "keywords": [
     "XMLHttpRequest",
@@ -22,6 +21,10 @@
     "onloadend",
     "onprogress"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/candreoliveira/xhr-events.git"
+  },
   "author": "@candreoliveira",
   "license": "ISC",
   "devDependencies": {
