@@ -7,6 +7,6 @@ if (this.window && this.XMLHttpRequest) {
 }
 
 module.exports = {
-  XHREvent
+  XHREvent,
   XHRHelper
 }
