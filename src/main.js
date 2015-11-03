@@ -1,4 +1,4 @@
-import XHREvent from './xhrEvent.js';
+import XHREvent from './xhrEvent';
 import XHRHelper from './xhrHelper';
 
 if (window && XMLHttpRequest) {
