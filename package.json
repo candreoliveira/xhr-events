@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npm test",
     "webpack": "webpack && webpack -c webpack.config.min.js",
-    "prepublish": "npm run webpack"
+    "preversion": "npm run webpack"
   },
   "keywords": [
     "XMLHttpRequest",
