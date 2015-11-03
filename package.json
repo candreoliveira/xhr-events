@@ -2,7 +2,7 @@
   "name": "xhr-events",
   "version": "0.0.1",
   "description": "XHR global handlers over XMLHttpRequest.",
-  "main": "main.js",
+  "main": "dist/xhrEvents.js",
   "scripts": {
     "test": "npm test",
     "webpack": "webpack && webpack -c webpack.config.min.js"
