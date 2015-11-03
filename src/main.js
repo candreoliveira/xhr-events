@@ -1,8 +1,8 @@
 import XHREvent from './xhrEvent';
 import XHRHelper from './xhrHelper';
 
-if (window && XMLHttpRequest) {
-  const xhrHelper = new XHRHelper(window, XMLHttpRequest);
+if (this.window && this.XMLHttpRequest) {
+  const xhrHelper = new XHRHelper(this.window, this.XMLHttpRequest);
   XHREvent.start(xhrHelper, XMLHttpRequest);
 }
 
