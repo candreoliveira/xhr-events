@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	eval("'use strict';\n\nvar _xhrEvent = __webpack_require__(1);\n\nvar _xhrEvent2 = _interopRequireDefault(_xhrEvent);\n\nvar _xhrHelper = __webpack_require__(2);\n\nvar _xhrHelper2 = _interopRequireDefault(_xhrHelper);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nif (undefined.window && undefined.XMLHttpRequest) {\n  var xhrHelper = new _xhrHelper2.default(undefined.window, undefined.XMLHttpRequest);\n  _xhrEvent2.default.start(xhrHelper, XMLHttpRequest);\n}\n\nmodule.exports = {\n  XHREvent: _xhrEvent2.default,\n  XHRHelper: _xhrHelper2.default\n};\n\n/*****************\n ** WEBPACK FOOTER\n ** ./src/main.js\n ** module id = 0\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./src/main.js?");
+	eval("'use strict';\n\nvar _xhrEvent = __webpack_require__(1);\n\nvar _xhrEvent2 = _interopRequireDefault(_xhrEvent);\n\nvar _xhrHelper = __webpack_require__(2);\n\nvar _xhrHelper2 = _interopRequireDefault(_xhrHelper);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nif (typeof window !== 'undefined' && typeof XMLHttpRequest !== 'undefined') {\n  var xhrHelper = new _xhrHelper2.default(window, XMLHttpRequest);\n  _xhrEvent2.default.start(xhrHelper, XMLHttpRequest);\n}\n\nmodule.exports = {\n  XHREvent: _xhrEvent2.default,\n  XHRHelper: _xhrHelper2.default\n};\n\n/*****************\n ** WEBPACK FOOTER\n ** ./src/main.js\n ** module id = 0\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./src/main.js?");
 
 /***/ },
 /* 1 */

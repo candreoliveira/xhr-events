@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../dist/xhrEvents.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function log(type) {
+        return function(e) {
+          console.log('---------------------------------');
+          console.log(type);
+          console.log(e);
+          console.log('---------------------------------');
+        }
+      }
+
+      function get(url) {
+        var xhr = new XMLHttpRequest(true, true);
+        xhr.open('GET', url);
+        xhr.send();
+      }
+
+      document.addEventListener('XHRLoadStart', log('XHRLoadStart'));
+      document.addEventListener('XHRLoadEnd', log('XHRLoadEnd'));
+      document.addEventListener('XHRLoad', log('XHRLoad'));
+      document.addEventListener('XHRAbort', log('XHRAbort'));
+      document.addEventListener('XHRTimeout', log('XHRTimeout'));
+      document.addEventListener('XHRError', log('XHRError'));
+      document.addEventListener('XHRProgress', log('XHRProgress'));
+
+      get('http://globo.com');
+      get('http://google.com');
+      get('http://americanas.com');
+    </script>
+  </body>
+</html>
