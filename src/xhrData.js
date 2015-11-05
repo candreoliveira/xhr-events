@@ -1,6 +1,6 @@
 import Message from './message';
 
-export default class XHRHelper {
+export default class XHRData {
   constructor(window, xhr) {
     this.xmlHttpRequestOpen = xhr.prototype.open;
     this.document = window && window.document;

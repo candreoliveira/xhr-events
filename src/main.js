@@ -1,12 +1,13 @@
 import XHREvent from './xhrEvent';
-import XHRHelper from './xhrHelper';
+import XHRData from './xhrData';
 
-if (typeof window !== 'undefined' && typeof XMLHttpRequest !== 'undefined') {
-  const xhrHelper = new XHRHelper(window, XMLHttpRequest);
-  XHREvent.start(xhrHelper, XMLHttpRequest);
-}
+const config = {
+  start: function() {
+    if (typeof window !== 'undefined' && typeof XMLHttpRequest !== 'undefined') {
+      XHREvent.start((new XHRData(window, XMLHttpRequest)), XMLHttpRequest);
+    }
+  }
+};
 
-module.exports = {
-  XHREvent,
-  XHRHelper
-}
+config.start();
+module.exports = config;
