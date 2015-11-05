@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	eval("'use strict';\n\nvar _xhrEvent = __webpack_require__(1);\n\nvar _xhrEvent2 = _interopRequireDefault(_xhrEvent);\n\nvar _xhrData = __webpack_require__(2);\n\nvar _xhrData2 = _interopRequireDefault(_xhrData);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar config = {\n  start: function start() {\n    if (typeof window !== 'undefined' && typeof XMLHttpRequest !== 'undefined') {\n      _xhrEvent2.default.start(new _xhrData2.default(window, XMLHttpRequest), XMLHttpRequest);\n    }\n  }\n};\n\nconfig.start();\nmodule.exports = config;\n\n/*****************\n ** WEBPACK FOOTER\n ** ./src/main.js\n ** module id = 0\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./src/main.js?");
+	eval("'use strict';\n\nvar _xhrEvent = __webpack_require__(1);\n\nvar _xhrEvent2 = _interopRequireDefault(_xhrEvent);\n\nvar _xhrData = __webpack_require__(2);\n\nvar _xhrData2 = _interopRequireDefault(_xhrData);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar config = {\n  start: function start() {\n    _xhrEvent2.default.start(new _xhrData2.default(window, XMLHttpRequest), XMLHttpRequest);\n  }\n};\n\nmodule.exports = config;\n\nif (typeof window !== 'undefined' && typeof XMLHttpRequest !== 'undefined') {\n  window.XHREvents = config;\n}\n\n/*****************\n ** WEBPACK FOOTER\n ** ./src/main.js\n ** module id = 0\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./src/main.js?");
 
 /***/ },
 /* 1 */
