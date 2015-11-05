@@ -29,11 +29,17 @@
   "author": "@candreoliveira",
   "license": "ISC",
   "devDependencies": {
-    "babel-core": "^6.0.18",
+    "babel-core": "^6.1.2",
     "babel-loader": "^6.0.1",
-    "babel-preset-es2015": "^6.0.15",
+    "babel-preset-es2015": "^6.1.2",
+    "babel-runtime": "^6.0.14",
     "expose-loader": "^0.7.1",
     "uglify-loader": "^1.2.0",
     "webpack": "^1.12.2"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.0.16",
+    "babel-runtime": "^6.0.14",
+    "object-assign": "^4.0.1"
   }
 }
