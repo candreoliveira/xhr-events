@@ -3,7 +3,7 @@ import XHRData from './xhrData';
 
 const config = {
   start: function() {
-    XHREvent.start((new XHRData(window, XMLHttpRequest)), XMLHttpRequest);
+    XHREvent.start(XMLHttpRequest);
   }
 };
 
