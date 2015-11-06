@@ -1,6 +1,6 @@
 {
   "name": "xhr-events",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "XHR global handlers over XMLHttpRequest.",
   "main": "dist/xhrEvents.js",
   "scripts": {
