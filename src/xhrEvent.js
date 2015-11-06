@@ -1,41 +1,44 @@
 import ObjectAssign from 'object-assign';
+import XHRTiming from './xhrTiming';
 
 export default class XHREvent {
   static start(xhrHelper, XMLHttpRequest) {
     XMLHttpRequest.prototype.open = function () {
-      this.onloadstart = (event) => {
-        xhrHelper.dates = ObjectAssign(xhrHelper.dates, {loadStartDate: new Date()});
-        xhrHelper.dispatchNewMessage('XHRLoadStart', ObjectAssign({event}, xhrHelper.dates));
+      let xhrTiming = new XHRTiming();
+
+      this.onloadstart = (XMLHttpRequestEvent) => {
+        xhrTiming.loadStartDate = new Date();
+        xhrHelper.dispatchNewMessage('XHRLoadStart', ObjectAssign({XMLHttpRequestEvent}, xhrTiming.dates()));
       }
 
-      this.onloadend = (event) => {
-        xhrHelper.dates = ObjectAssign(xhrHelper.dates, {loadEndDate: new Date()});
-        xhrHelper.dispatchNewMessage('XHRLoadEnd', ObjectAssign({event}, xhrHelper.dates));
+      this.onloadend = (XMLHttpRequestEvent) => {
+        xhrTiming.loadEndDate = new Date();
+        xhrHelper.dispatchNewMessage('XHRLoadEnd', ObjectAssign({XMLHttpRequestEvent}, xhrTiming.dates()));
       }
 
-      this.onload = (event) => {
-        xhrHelper.dates = ObjectAssign(xhrHelper.dates, {loadDate: new Date()});
-        xhrHelper.dispatchNewMessage('XHRLoad', ObjectAssign({event}, xhrHelper.dates));
+      this.onload = (XMLHttpRequestEvent) => {
+        xhrTiming.loadDate = new Date();
+        xhrHelper.dispatchNewMessage('XHRLoad', ObjectAssign({XMLHttpRequestEvent}, xhrTiming.dates()));
       }
 
-      this.onabort = (event) => {
-        xhrHelper.dates = ObjectAssign(xhrHelper.dates, {abortDate: new Date()});
-        xhrHelper.dispatchNewMessage('XHRAbort', ObjectAssign({event}, xhrHelper.dates));
+      this.onabort = (XMLHttpRequestEvent) => {
+        xhrTiming.abortDate = new Date();
+        xhrHelper.dispatchNewMessage('XHRAbort', ObjectAssign({XMLHttpRequestEvent}, xhrTiming.dates()));
       }
 
-      this.ontimeout = (event) => {
-        xhrHelper.dates = ObjectAssign(xhrHelper.dates, {timeoutDate: new Date()});
-        xhrHelper.dispatchNewMessage('XHRTimeout', ObjectAssign({event}, xhrHelper.dates));
+      this.ontimeout = (XMLHttpRequestEvent) => {
+        xhrTiming.timeoutDate = new Date();
+        xhrHelper.dispatchNewMessage('XHRTimeout', ObjectAssign({XMLHttpRequestEvent}, xhrTiming.dates()));
       }
 
-      this.onerror = (event) => {
-        xhrHelper.dates = ObjectAssign(xhrHelper.dates, {errorDate: new Date()});
-        xhrHelper.dispatchNewMessage('XHRError', ObjectAssign({event}, xhrHelper.dates));
+      this.onerror = (XMLHttpRequestEvent) => {
+        xhrTiming.errorDate = new Date();
+        xhrHelper.dispatchNewMessage('XHRError', ObjectAssign({XMLHttpRequestEvent}, xhrTiming.dates()));
       }
 
-      this.onprogress = (event) => {
-        xhrHelper.dates = ObjectAssign(xhrHelper.dates, {progressDates: xhrHelper.dates.progressDates.concat([new Date()])});
-        xhrHelper.dispatchNewMessage('XHRProgress', ObjectAssign({event}, xhrHelper.dates));
+      this.onprogress = (XMLHttpRequestEvent) => {
+        xhrTiming.progressDates = xhrTiming.progressDates.concat([new Date()]);
+        xhrHelper.dispatchNewMessage('XHRProgress', ObjectAssign({XMLHttpRequestEvent}, xhrTiming.dates()));
       }
 
       xhrHelper.xmlHttpRequestOpen.apply(this, arguments);

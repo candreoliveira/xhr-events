@@ -5,15 +5,6 @@ export default class XHRData {
     this.xmlHttpRequestOpen = xhr.prototype.open;
     this.document = window && window.document;
     this.window = window;
-    this.dates = {
-      loadStartDate: null,
-      loadEndDate: null,
-      loadDate: null,
-      abortDate: null,
-      timeoutDate: null,
-      errorDate: null,
-      progressDates: []
-    };
   }
 
   dispatchNewMessage(name, data) {
