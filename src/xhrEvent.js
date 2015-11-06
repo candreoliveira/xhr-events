@@ -4,9 +4,11 @@ import XHRData from './xhrData';
 
 export default class XHREvent {
   static start(XMLHttpRequest) {
-    XMLHttpRequest.prototype.open = function () {
+    const xhr = XMLHttpRequest;
+
+    xhr.prototype.open = function () {
       let xhrTiming = new XHRTiming();
-      let xhrData = new XHRData(window, XMLHttpRequest);
+      let xhrData = new XHRData(window, xhr);
       xhrData.request = {
         method: arguments[0],
         url: arguments[1],
