@@ -2,8 +2,8 @@ import XHREvent from './xhrEvent';
 import XHRData from './xhrData';
 
 const config = {
-  start: function() {
-    XHREvent.start(XMLHttpRequest);
+  start: function(window) {
+    XHREvent.start(window, XMLHttpRequest, XMLHttpRequest.prototype.open);
   }
 };
 

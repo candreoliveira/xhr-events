@@ -3,12 +3,12 @@ import XHRTiming from './xhrTiming';
 import XHRData from './xhrData';
 
 export default class XHREvent {
-  static start(XMLHttpRequest) {
-    const xhr = XMLHttpRequest;
+  static start(window, XHR, XHROpen) {
 
-    xhr.prototype.open = function () {
+    XHR.prototype.open = function () {
       let xhrTiming = new XHRTiming();
-      let xhrData = new XHRData(window, xhr);
+      let xhrData = new XHRData(window);
+
       xhrData.request = {
         method: arguments[0],
         url: arguments[1],
@@ -52,7 +52,7 @@ export default class XHREvent {
         xhrData.dispatchNewMessage('XHRProgress', ObjectAssign({XMLHttpRequestEvent}, xhrTiming.dates()));
       }
 
-      xhrData.xmlHttpRequestOpen.apply(this, arguments);
+      XHROpen.apply(this, arguments);
     }
   }
 }
