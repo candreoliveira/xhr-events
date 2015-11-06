@@ -1,5 +1,6 @@
 import ObjectAssign from 'object-assign';
 import XHRTiming from './xhrTiming';
+import XHRData from './xhrData';
 
 export default class XHREvent {
   static start(XMLHttpRequest) {
